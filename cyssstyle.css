@@ -1,0 +1,90 @@
+* {
+    font-family: 微軟正黑體;
+}
+body {
+    background-image: url(image/background.jpg);
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.cyssartitle {
+    padding: 40px 20px;/* 上下 40px、左右 20px 的內距 */
+    display: flex;
+    flex-direction: column;/* 子項目垂直排列（上→下） */
+    align-items: center;/* 子項目水平置中對齊 */
+}
+
+h1 {
+    margin-bottom: 30px;
+    text-align: center;
+    font-size: 70px;
+    font-weight: bolder;
+    color: rgb(60, 60, 60);
+}
+
+h2 {
+    color: #000000;
+    font-size: 50px;
+    text-align: center;
+}
+
+h3 {
+    color: #ffffff;
+    font-size: 40px;
+}
+
+h4 {
+    color: #000;
+    font-size: 40px;
+    background-color: rgb(211, 211, 211);
+    border-radius: 20px;
+    padding: 10px 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* 陰影 */
+}
+
+h4:hover {
+    color: #ffffff;
+    background-color: rgb(77, 77, 77);
+}
+
+a {
+    text-decoration: none;
+}
+
+.cyssdetail {
+    background-color: rgb(121, 121, 121);
+    color: #ffffff;
+    font-weight: lighter;
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    padding-top: 1px; /*調整內距*/
+    padding-bottom: 40px;
+    padding-left: 30px;
+    padding-right: 30px;
+    border-radius: 20px; /* 圓角邊框 20px */
+    width: 500px;
+    max-width: 500px; /* 每個區塊最多寬 500px */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* 陰影 */
+}
+
+.cyssimg {
+    width: auto; 
+    height: 400px;
+    margin-top: 20px;
+    border-radius: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* 陰影 */
+}
+
+.pp {
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.pp:hover {
+    color: #000000;
+}
+
+p {
+    text-align: left;
+}

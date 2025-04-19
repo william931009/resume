@@ -1,0 +1,335 @@
+* {
+    box-sizing: border-box;
+    font-family: 微軟正黑體;
+    scroll-behavior: smooth; /*滾動畫面*/
+}
+
+body {
+    margin: 0;
+    background-image: url(image/background.jpg);
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+/*標籤列*/
+nav {
+    font-weight: bolder;
+    text-align: center;
+    background-color: #b7b7b7;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+    gap: 80px; /* 連結間距 */
+    padding: 20px 0px; /* 上下內邊距 */
+}
+
+nav a {
+    padding: 12px 10px;
+    text-decoration: none;
+    color: #000;
+    font-size: 20px;
+}
+nav a:hover {
+    color: #ffffff;
+    background-color: rgb(0, 0, 0);
+    border-radius: 15px;
+}
+
+/*關於我*/
+.aboutarticle {
+    height: auto;
+    padding-top: 200px;
+    padding-bottom: 200px;
+    display: flex;
+    justify-content: center; /*水平居中*/
+    align-items: center; /*垂直居中*/
+    flex-wrap: wrap; /* 小螢幕時允許自動換行 */
+}
+
+h1.abouth1 {
+    font-size: 50px; 
+    font-weight: bolder;
+    color: rgb(82, 82, 82);
+}
+
+.aboutphoto {
+    margin: 10px 0px 10px 0px;
+    width: 500px;
+}
+
+.abouttext {
+    font-size: 30px;
+    font-weight: bolder;
+}
+
+.aboutdiv {
+    display: flex;
+    gap: 50px;
+}
+
+/*技能*/
+.skillsarticle {
+    padding: 40px 20px; /* 上下 40px、左右 20px 的內距 */
+    display: flex;
+    flex-direction: column; /* 子項目垂直排列（上→下） */
+    align-items: center; /* 子項目水平置中對齊 */
+}
+
+.chaptertitle {
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+h1.chapterh1 {
+    font-size: 70px; 
+    font-weight: bolder;
+    color: rgb(60, 60, 60);
+}
+
+h2.chapter1h2 {
+    color: #ffffff;
+    font-size: 50px;
+    font-weight: bolder;
+}
+
+.skillspp {
+    width: 100%;
+    display: flex;
+    flex-direction: row; /* 子項目水平排列（左→右） */
+    justify-content: center; /* 水平置中所有內容 */
+    gap: 40px; /* 兩個區塊之間間距 40px */
+    flex-wrap: wrap; /* 小螢幕時允許自動換行 */
+}
+
+.skillsprogramming {
+    background-color: rgb(121, 121, 121);
+    padding: 20px; /* 內距 20px */
+    border-radius: 15px; /* 圓角邊框 15px */
+    width: 100%; /*占滿*/
+    max-width: 400px; /* 每個區塊最多寬 400px */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* 陰影 */
+    text-align: center;
+}
+
+
+/*------------------------------------------------------------圓*/
+/* 動畫中的變數 */
+@property --percentage {
+    syntax: "<number>";
+    inherits: true;
+    initial-value: 0;
+}
+  
+@keyframes circleLoop {
+    from {
+      --percentage: 0;
+    }
+}
+
+/* 整個圓 */
+.pgcircle {
+    display: flex;
+    flex-wrap: wrap; /* 換行排列，避免超出畫面 */
+    justify-content: center;
+    gap: 20px;
+    padding: 30px;
+}
+  
+/* 每個圓形技能條 */
+.circle {
+    --color: #2d3944;
+    width: 100px;
+    aspect-ratio: 1;  /* 高度 = 寬度 */
+    display: grid;
+    place-content: center; /* 垂直 + 水平置中 */
+    position: relative; /* 方便偽元素定位 */
+    animation: circleLoop 4s infinite forwards;
+}
+  
+/* 外部圓形進度條 */
+.circle::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    background: conic-gradient(var(--color) calc(var(--percentage) * 1%), #0000 0%);
+}
+  
+/* 中心白色遮罩圓 */
+.circle::after {
+    content: "";
+    width: 70px;
+    height: 70px;
+    background-color: #fff;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+  
+/* 標籤文字 */
+.label {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    font-weight: bold;
+    font-size: 14px;
+    color: #000;
+}
+/*--------------------------------------------------------------*/
+  
+
+.skillsprofessional {
+    background-color: rgb(121, 121, 121);
+    padding: 20px; /* 內距 20px */
+    border-radius: 15px; /* 圓角邊框 15px */
+    width: 100%; /*占滿*/
+    max-width: 400px; /* 每個區塊最多寬 400px */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* 陰影 */
+    text-align: center;
+}
+
+/*-----------------------------------進度條*/
+@property --percentage {
+    syntax: "<number>";
+    inherits: true;
+    initial-value: 0;
+}
+  
+@keyframes fillLine {
+    from {
+      --percentage: 0;
+    }
+}
+  
+.plline {
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+  
+.line .label2 {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #ffffff;
+    font-family: sans-serif;
+}
+  
+.track {
+    width: 100%;
+    height: 20px;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 2px solid #000000; 
+}
+  
+.fill {
+    height: 100%;
+    background-color: #bbbbbb;
+    width: calc(var(--percentage) * 1%);
+    border-radius: 10px;
+    animation: fillLine 4s infinite;
+}
+/*------------------------------------------*/
+
+/* 經驗 */
+.experiencesarticle {
+    padding: 40px 20px; /* 上下 40px、左右 20px 的內距 */
+    display: flex;
+    flex-direction: column; /* 子項目垂直排列（上→下） */
+    align-items: center; /* 子項目水平置中對齊 */
+}
+
+.chapter2h2 {
+    color: #000000;
+    font-size: 50px;
+    text-align: center;
+}
+
+.chapter2h3 {
+    background-color: rgb(121, 121, 121);
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: lighter;
+    line-height: 2;
+    padding: 10px 50px; /* 內距 */
+    border-radius: 20px; /* 圓角邊框 20px */
+    max-width: 800px; /* 每個區塊最多寬 800px */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* 陰影 */
+}
+
+.eltwodetail {
+    background-color: rgb(121, 121, 121);
+    color: #ffffff;
+    font-weight: lighter;
+    text-align: center;
+    margin-bottom: 30px;
+    margin-bottom: 30px;
+    padding-top: 1px; /*調整內距*/
+    padding-bottom: 40px;
+    padding-left: 50px;
+    padding-right: 50px;
+    border-radius: 20px; /* 圓角邊框 20px */
+    width: 650px;
+    max-width: 650px; /* 每個區塊最多寬 650px */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* 陰影 */
+}
+
+.chapter3h3 {
+    color: #ffffff;
+    font-size: 40px;
+}
+
+.elimg {
+    width: auto; 
+    height: 300px;
+    margin-top: 20px;
+    border-radius: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* 陰影 */
+    transition: transform 0.3s ease-in-out; /* 對 transform 屬性應用 0.3 秒的 ease-in-out 動畫 */
+}
+
+.elimg:hover {
+    transform: scale(1.05); /* 懸停時放大 1.05 倍 */
+}
+
+.pp {
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.pp:hover {
+    color: #000000;
+}
+
+p {
+    text-align: left;
+}
+
+.chapter4h3 {
+    font-size: 30px;
+    color: #ffffff;
+    text-shadow: 2px 2px 1px#2d3944;
+}
+
+.footerh4 {
+    text-align: center;
+    width: 100%;
+    background-color: #000;
+    color: #ffffff;
+    margin: 0;
+}
+
+@media screen and (max-width: 768px) {
+    body {
+        margin: 0;
+        background-image: url(image/background2.jpg);
+        background-attachment: fixed;
+        background-size: cover;
+    }
+    
+}
